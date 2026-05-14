@@ -1,0 +1,421 @@
+:root {
+  --blue: #a8d2fb;
+  --blue-line: #3f74ac;
+  --ink: #111827;
+  --muted: #4b5563;
+  --paper: #ffffff;
+  --page: #f3f6f9;
+  --line: #d7dde5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto 18px;
+  max-width: 920px;
+}
+
+button {
+  border: 1px solid #b8c6d6;
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  min-height: 38px;
+  padding: 8px 14px;
+}
+
+button:hover {
+  background: #eef5fc;
+}
+
+.proposal {
+  background: var(--paper);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  margin: 0 auto;
+  max-width: 920px;
+  min-height: 1120px;
+  padding: 64px 58px 48px;
+}
+
+.proposal-header {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand img {
+  display: block;
+  height: auto;
+  max-width: 180px;
+}
+
+.city-date {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 160px;
+  width: min(420px, 100%);
+}
+
+label {
+  color: var(--muted);
+  display: grid;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+input,
+textarea {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  font: inherit;
+  min-width: 0;
+  padding: 9px 10px;
+  resize: vertical;
+  text-transform: none;
+  width: 100%;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--blue-line);
+  outline: 2px solid rgba(63, 116, 172, 0.16);
+}
+
+.company-info {
+  margin-top: 18px;
+  line-height: 1.35;
+  width: min(680px, 100%);
+}
+
+.company-info p {
+  margin: 2px 0;
+}
+
+.client-info {
+  margin-top: 28px;
+}
+
+.items-section {
+  margin-top: 64px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 820px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--blue-line);
+  padding: 8px;
+  vertical-align: middle;
+}
+
+th {
+  background: var(--blue);
+  color: #0b1b2c;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+td {
+  background: #ffffff;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 72px;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(3),
+td:nth-child(3) {
+  width: 96px;
+}
+
+th:nth-child(5),
+td:nth-child(5),
+th:nth-child(6),
+td:nth-child(6) {
+  width: 130px;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: auto;
+}
+
+td input,
+td textarea {
+  border: 0;
+  border-radius: 0;
+  padding: 6px;
+}
+
+td input:focus,
+td textarea:focus {
+  outline-offset: -2px;
+}
+
+.row-total,
+#grand-total {
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+tfoot td {
+  background: #eef6ff;
+  font-weight: 700;
+}
+
+tfoot td:first-child {
+  text-align: right;
+}
+
+.actions-col {
+  border-color: transparent;
+  width: 48px;
+}
+
+.remove-row {
+  align-items: center;
+  background: #fff4f4;
+  border-color: #f1b6b6;
+  color: #9a1c1c;
+  display: inline-flex;
+  font-size: 22px;
+  height: 34px;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0;
+  width: 34px;
+}
+
+.add-item-inline {
+  background: #e8f4ff;
+  border-color: var(--blue-line);
+  color: #173f70;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.proposal-footer {
+  align-items: end;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 420px;
+  text-align: center;
+}
+
+.proposal-footer input {
+  border-color: transparent;
+  color: #005df5;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .app {
+    padding: 14px;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .proposal {
+    min-height: auto;
+    padding: 28px 18px 34px;
+  }
+
+  .proposal-header,
+  .proposal-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-header {
+    display: grid;
+  }
+
+  .city-date {
+    grid-template-columns: 1fr;
+  }
+
+  .items-section {
+    margin-top: 36px;
+  }
+
+  .proposal-footer {
+    margin-top: 72px;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .app {
+    padding: 0;
+  }
+
+  .toolbar,
+  .actions-col,
+  .add-item-inline {
+    display: none;
+  }
+
+  .proposal {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    min-height: auto;
+    padding: 18mm 18mm 30mm;
+    position: relative;
+  }
+
+  input,
+  textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border-color: transparent;
+    outline: 0;
+    padding-left: 0;
+    padding-right: 0;
+    resize: none;
+  }
+
+  textarea::-webkit-resizer {
+    display: none;
+  }
+
+  .brand img {
+    max-width: 145px;
+  }
+
+  .company-info {
+    font-size: 12px;
+    line-height: 1.25;
+    margin-top: 10px;
+  }
+
+  .client-info {
+    margin-top: 18px;
+  }
+
+  .items-section {
+    margin-top: 24px;
+  }
+
+  .table-wrap {
+    overflow: visible;
+  }
+
+  table {
+    font-size: 11px;
+    min-width: 0;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 4px;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 9%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 12%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 33%;
+  }
+
+  th:nth-child(5),
+  td:nth-child(5),
+  th:nth-child(6),
+  td:nth-child(6) {
+    width: 17%;
+  }
+
+  td input,
+  td textarea {
+    padding: 2px;
+  }
+
+  .proposal-footer {
+    align-items: end;
+    bottom: 12mm;
+    font-size: 12px;
+    left: 18mm;
+    margin-top: 0;
+    padding-top: 0;
+    position: fixed;
+    right: 18mm;
+  }
+
+  .proposal-footer input {
+    color: #005df5;
+    font-size: 12px;
+    padding: 0;
+  }
+}

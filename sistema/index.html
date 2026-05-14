@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proposta de Sistema de Segurança</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="toolbar" aria-label="Ações da proposta">
+        <button type="button" id="add-row">+ Item</button>
+        <button type="button" id="print">Imprimir / PDF</button>
+        <button type="button" id="clear">Limpar</button>
+      </section>
+
+      <article class="proposal" aria-label="Proposta">
+        <header class="proposal-header">
+          <div class="brand">
+            <img src="assets/logo-hb-santos.png" alt="HB Santos">
+          </div>
+
+          <div class="city-date">
+            <label>
+              Cidade
+              <input id="city" type="text" value="São Paulo">
+            </label>
+            <label>
+              Data
+              <input id="proposal-date" type="date">
+            </label>
+          </div>
+        </header>
+
+        <section class="company-info" aria-label="Dados da empresa">
+          <p><strong>HB Santos</strong></p>
+          <p>Vendas e Instalação - CFTV Digital e Analógica - Interfone</p>
+          <p>Manutenção em Geral</p>
+          <p>Hugo Barros Técnico: (11) 97012-4349</p>
+          <p>Weldson Técnico: (11) 99644-3337</p>
+          <p>mikeemilu@gmail.com</p>
+          <p>Rua Satélite Japetus, 50 - Casa Grande - São Paulo</p>
+        </section>
+
+        <section class="client-info" aria-label="Dados do cliente">
+          <label>
+            Endereço do cliente
+            <textarea id="client-address" rows="3" placeholder="Digite o endereço completo do cliente"></textarea>
+          </label>
+        </section>
+
+        <section class="items-section" aria-label="Itens da proposta">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Itens</th>
+                  <th>Unidade</th>
+                  <th>Metro</th>
+                  <th>Descrição</th>
+                  <th>Valor Unitário</th>
+                  <th>Valor Total</th>
+                  <th class="actions-col" aria-label="Ações"></th>
+                </tr>
+              </thead>
+              <tbody id="items-body"></tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5">Total Geral</td>
+                  <td id="grand-total">R$ 0,00</td>
+                  <td class="actions-col"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <button type="button" class="add-item-inline">+ Acrescentar item</button>
+        </section>
+
+        <footer class="proposal-footer">
+          <label>
+            Chave Pix
+            <input id="pix-key" type="text" value=" (11) 96232-2931 Hugo Barros dos Santos 
+Caixa Econômica Federal">
+          </label>
+          <label>
+            Telefone
+            <input id="phone" type="text" value="(11) 97012-4349 / (11) 99644-3337">
+          </label>
+        </footer>
+      </article>
+    </main>
+
+    <template id="row-template">
+      <tr>
+        <td><input class="item" type="text" inputmode="numeric" aria-label="Item"></td>
+        <td><input class="unit" type="number" min="0" step="1" value="1" aria-label="Unidade"></td>
+        <td><input class="meter" type="number" min="0" step="0.01" value="0" aria-label="Metro"></td>
+        <td><textarea class="description" rows="2" aria-label="Descrição"></textarea></td>
+        <td><input class="unit-price" type="number" min="0" step="0.01" value="0" aria-label="Valor unitário"></td>
+        <td class="row-total">R$ 0,00</td>
+        <td class="actions-col"><button type="button" class="remove-row" aria-label="Remover item">×</button></td>
+      </tr>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
